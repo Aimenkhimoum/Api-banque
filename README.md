@@ -1,6 +1,6 @@
 # 🏦 Système de Gestion Bancaire MVP
 
-Ce projet est un "Proof of Concept" (PoC) d'une architecture bancaire Fullstack, réalisé dans le cadre de ma préparation technique pour la Société Générale (X-BLOCKS). 
+Ce projet est un "Proof of Concept" (PoC) d'une architecture bancaire Fullstack. 
 
 Il démontre la mise en place d'une chaîne complète de communication entre une base de données, une API robuste et une interface utilisateur moderne, le tout conteneurisé pour la production.
 
