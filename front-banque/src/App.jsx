@@ -5,7 +5,7 @@ function App() {
   const [comptes, setComptes] = useState([])
 
   useEffect(() => {
-    // Appel vers votre serveur Spring Boot
+    // Appel vers le serveur Spring Boot
     axios.get('http://20.215.192.13:8080/api/comptes')
       .then(reponse => {
         setComptes(reponse.data)
