@@ -9,11 +9,23 @@ Il démontre la mise en place d'une chaîne complète de communication entre une
 * **Frontend :** React 18, Vite, Axios
 * **DevOps :** Docker, Docker Compose
 * **Architecture :** Modèle 3 couches (Controller, Service, Repository), API RESTful
+* **Déploiement :** Machine Virtuelle Microsoft Azure (Linux)
+
+## Déploiement en ligne (Live Demo)
+L'application est entièrement déployée en production et accessible publiquement via Microsoft Azure :
+
+👉 **Interface Web (React) :** [http://20.215.192.13](http://20.215.192.13)
+👉 **Console de Base de données (H2) :** [http://20.215.192.13:8080/h2-console](http://20.215.192.13:8080/h2-console) 
+*(JDBC URL: `jdbc:h2:mem:testdb` | User: `sa` | Sans mot de passe)*
+👉 **API Backend (Endpoints) :** `http://20.215.192.13:8080/api/comptes`
+
+*(Note : L'interface web communique en temps réel avec l'API Spring Boot et la base de données conteneurisées sur le serveur grâce aux configurations CORS).*  
 
 ## Comment lancer le projet localement ?
 
-Grâce à Docker, le projet se lance en une seule ligne de commande. 
-Assurez-vous d'avoir Docker installé et lancé sur votre machine.
+Grâce à Docker, le projet se lance facilement. Assurez-vous d'avoir Docker installé et lancé sur votre machine.
+
+> **⚠️ Important :** Le code actuel du Frontend est configuré pour la production et pointe vers l'API déployée sur Azure (`20.215.192.13`). Pour un fonctionnement 100% local, remplacez cette IP par `localhost` dans les requêtes de votre Frontend (React) avant de compiler.
 
 1. Clonez ce repository :
    ```bash
@@ -27,16 +39,4 @@ Assurez-vous d'avoir Docker installé et lancé sur votre machine.
 ```bash
   docker-compose up --build
    ```
-## Accès aux services
-  Interface Web (React) : http://localhost
 
-  API Backend (Spring Boot) : http://localhost:8080/api/comptes
-
-  Base de données (Console H2) : http://localhost:8080/h2-console
-  (JDBC URL: jdbc:h2:mem:testdb)
-
-##  Déploiement en ligne (Live Demo)
-L'application est actuellement déployée et accessible publiquement via une machine virtuelle Microsoft Azure :
-👉 **[Tester l'application en ligne](http://20.215.192.13)**
-
-*(Note : L'interface web communique en temps réel avec l'API Spring Boot et la base de données conteneurisées sur le serveur).*  
